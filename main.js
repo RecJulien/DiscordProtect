@@ -13,7 +13,7 @@ var party_launch = false;
 
 //UTILITAIRE
 var prefix = "/";//LE PREFIX
-var mention = "<@358916708821499904>";//ID DU BOT
+var mention = "<@id du bot>";//ID DU BOT
 
 //CONSOLE LOG / LE STATUS / LE JEU
 bot.on('ready', () => {
