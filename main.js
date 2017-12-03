@@ -106,14 +106,14 @@ bot.on('message', message => {
 bot.on('message', message => {
 	if (message.content.startsWith("/sug")){
 		var sug = message.content.substr(5);
-        bot.users.get('id de l'utilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send(`Suggestion de : ` + message.author + " Dit : " + sug);
+        bot.users.get('id de lutilisateur voulent reçevoir le message seul un utilisateur peut être mis').send(`Suggestion de : ` + message.author + " Dit : " + sug)
 	}})
 
 //SIMILAIRE A LA COMMANDE SAY
 bot.on('message', message => {
     if (message.content.startsWith('/repo')) {
         var repo = message.content.substr(5);
-        bot.users.get('id de l'utilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send("Report de : "+ message.author + " Raison : " + repo);
+        bot.users.get('id de lutilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send("Report de : "+ message.author + " Raison : " + repo);
 }})
 
 bot.on('message', message => {
@@ -128,7 +128,7 @@ bot.on('message', function(message){
         message.channel.send(message.author + " à Lancer la partie !")
         party_launch = true;
         number_random = Math.floor(Math.random() * (5000 - 0) + 0)
-        bot.users.get('id de l'utilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send("Un Guess Game vient d'être lancer part : "+ message.author + " Nombre : " + number_random);
+        bot.users.get('id de lutilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send("Un Guess Game vient d'être lancer part : "+ message.author + " Nombre : " + number_random);
         console.log(number_random);
    }
     if (party_launch && message.content != null){
