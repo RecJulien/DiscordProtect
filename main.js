@@ -102,6 +102,14 @@ bot.on('message', message => {
         message.channel.sendEmbed(mark_embed)
 }});
 
+//COMMANDE SAY - Le bot dit quelque chose 
+bot.on('message', message => {
+if (message.content.startsWith("/say")){//Si le message commence part ("/say")
+    message.delete(message.author); //SUPRIMME LA COMMANDE
+    var say = message.content.substr(5);//On defini Say - [say = message.content.substr(5)]
+    message.channel.send (say)//ENVOIE LA VARIABLE "SAY"
+}})
+
 //SIMILAIRE A LA COMMANDE SAY
 bot.on('message', message => {
 	if (message.content.startsWith("/sug")){
@@ -116,6 +124,7 @@ bot.on('message', message => {
         bot.users.get('id de lutilisateur voulent reçevoir le message.seul un utilisateur peut être mis').send("Report de : "+ message.author + " Raison : " + repo);
 }})
 
+//COMMANDE PING 
 bot.on('message', message => {
     if(message.content.startsWith(prefix +'ping')) {
         message.channel.send('Loading...').then(m => m.edit(`Pong ! **${m.createdTimestamp - message.createdTimestamp}ms.** `) );
@@ -123,6 +132,7 @@ bot.on('message', message => {
     }
 )
 
+//GUESS NUMBER GAME
 bot.on('message', function(message){
     if (message.content == "/gn game start"){
         message.channel.send(message.author + " à Lancer la partie !")
@@ -213,6 +223,7 @@ bot.on('message', message => {
     };
 });
 
+//COMMANDE METEO
 bot.on('message', message => {
 if (message.content.startsWith("/meteo")){
     var location = message.content.substr(6);
@@ -251,14 +262,6 @@ bot.on('message', message => {
      }
      message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
     })}})
-    
-//COMMANDE SAY - Le bot dit quelque chose 
-bot.on('message', message => {
-if (message.content.startsWith("/say")){//Si le message commence part ("/say")
-    message.delete(message.author); //SUPRIMME LA COMMANDE
-    var say = message.content.substr(5);//On defini Say - [say = message.content.substr(5)]
-    message.channel.send (say)//ENVOIE LA VARIABLE "SAY"
-}})
 
 //UTILISATEUR INFO - Avoir des info sur l'utilisateur mentionné
 bot.on('message', message => {
